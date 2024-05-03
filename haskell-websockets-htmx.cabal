@@ -1,0 +1,31 @@
+cabal-version:      3.4
+name:               haskell-websockets-htmx
+version:            0.1.0.0
+license:            MIT
+author:             sig
+maintainer:         sig
+category:           Web
+build-type:         Simple
+
+common warnings
+    ghc-options: -threaded -rtsopts -Wall
+
+executable haskell-websockets-htmx
+    import:           warnings
+    main-is:          Main.hs
+    default-extensions:
+      OverloadedStrings
+    other-modules:
+      HtmlBuilder
+    build-depends:    
+      base ^>=4.17.2.1,
+      websockets,
+      text,
+      warp,
+      wai-app-static,
+      time,
+      lucid2,
+      lucid2-htmx,
+      aeson
+    hs-source-dirs:   app
+    default-language: GHC2021
